@@ -104,12 +104,12 @@ start = time()
 #cmd = 'nohup %s %s/../bin/find_hit.py -p blastp -i %s -d %s -o %s_results/%s.sc -e 1e-5 -s %s -m 5e-2 -a %s -v %s > %s_results/log' % (
  #   pyc, here, fas, fas, fas, sfx, seed, np, hts, fas)
 print(fas)
-#makedb_cmd = "nohup diamond makedb --in %s -d %s" % (
-   # fas, fas)
+makedb_cmd = "nohup diamond makedb --in %s -d %s" % (
+    fas, fas)
 cmd = 'nohup diamond blastp -q %s -d %s -o %s_results/%s.sc -p %s -v' % (
     fas, fas, fas, sfx, np)
 #hts, fas
-#os.system(makedb_cmd)
+os.system(makedb_cmd)
 print("about to diamond")
 os.system(cmd)
 print('all to all homologous searching time:', time() - start)
@@ -160,12 +160,12 @@ _o.close()
 #cmd = 'nohup mcl %s_results/%s.xyz --abc -I 1.5 -o %s_results/%s.grp -te %s > %s_results/log'%(fas, sfx, fas, sfx, np, fas)
 
 # using original mcl algorithm to do mcl clustering.
-if alg == 'mcl':
-    cmd = 'nohup mcl %s_results/%s.xyz --abc -te %s -I %s -o %s_results/%s.grp' % (
-        fas, sfx, np, ifl, fas, sfx)
-else:
-    cmd = 'nohup %s %s/../bin/find_cluster.py -i %s_results/%s.xyz -a %s -I %s > %s_results/%s.grp' % (
-        pyc, here, fas, sfx, alg, ifl, fas, sfx)
+#if alg == 'mcl':
+  #  cmd = 'nohup mcl %s_results/%s.xyz --abc -te %s -I %s -o %s_results/%s.grp' % (
+  #      fas, sfx, np, ifl, fas, sfx)
+#else:
+cmd = 'nohup %s %s/../bin/find_cluster.py -i %s_results/%s.xyz -a %s -I %s > %s_results/%s.grp' % (
+    pyc, here, fas, sfx, alg, ifl, fas, sfx)
 
 os.system(cmd)
 
@@ -191,7 +191,7 @@ f.close()
 _o.close()
 
 # remove grp file
-os.system('rm %s_results/%s.grp' % (fas, sfx))
+#os.system('rm %s_results/%s.grp' % (fas, sfx))
 
 # print 'use mcl to group protein family time:', time() - start
 print('use %s to group protein family time:' % alg, time() - start)
