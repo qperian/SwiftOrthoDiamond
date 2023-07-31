@@ -150,8 +150,8 @@ Requirement:
     2. [MAFFT](https://mafft.cbrc.jp/alignment/software/, "https://mafft.cbrc.jp/alignment/software/")
     3. [MUSCLE](https://www.drive5.com/muscle/, "https://www.drive5.com/muscle/")
 3. [trimAl](http://trimal.cgenomics.org/, "http://trimal.cgenomics.org/")
-4. [DIAMOND] (https://github.com/bbuchfink/diamond,"https://github.com/bbuchfink/diamond")
-5. [GCC 12.1.0] (e.g., using conda, run "conda install -c conda-forge gcc=12.1.0")
+4. [DIAMOND](https://github.com/bbuchfink/diamond,"https://github.com/bbuchfink/diamond")
+5. GCC 12.1.0 (e.g., using conda, run "conda install -c conda-forge gcc=12.1.0")
 
 Usage:
 
